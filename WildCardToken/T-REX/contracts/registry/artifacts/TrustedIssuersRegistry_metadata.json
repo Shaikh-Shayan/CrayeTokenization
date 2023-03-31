@@ -1,0 +1,395 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract IClaimIssuer",
+						"name": "trustedIssuer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "claimTopics",
+						"type": "uint256[]"
+					}
+				],
+				"name": "ClaimTopicsUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract IClaimIssuer",
+						"name": "trustedIssuer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "claimTopics",
+						"type": "uint256[]"
+					}
+				],
+				"name": "TrustedIssuerAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract IClaimIssuer",
+						"name": "trustedIssuer",
+						"type": "address"
+					}
+				],
+				"name": "TrustedIssuerRemoved",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IClaimIssuer",
+						"name": "_trustedIssuer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_claimTopics",
+						"type": "uint256[]"
+					}
+				],
+				"name": "addTrustedIssuer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IClaimIssuer",
+						"name": "_trustedIssuer",
+						"type": "address"
+					}
+				],
+				"name": "getTrustedIssuerClaimTopics",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTrustedIssuers",
+				"outputs": [
+					{
+						"internalType": "contract IClaimIssuer[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_issuer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_claimTopic",
+						"type": "uint256"
+					}
+				],
+				"name": "hasClaimTopic",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_issuer",
+						"type": "address"
+					}
+				],
+				"name": "isTrustedIssuer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IClaimIssuer",
+						"name": "_trustedIssuer",
+						"type": "address"
+					}
+				],
+				"name": "removeTrustedIssuer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnershipOnIssuersRegistryContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IClaimIssuer",
+						"name": "_trustedIssuer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_claimTopics",
+						"type": "uint256[]"
+					}
+				],
+				"name": "updateIssuerClaimTopics",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addTrustedIssuer(address,uint256[])": {
+					"details": "See {ITrustedIssuersRegistry-addTrustedIssuer}."
+				},
+				"getTrustedIssuerClaimTopics(address)": {
+					"details": "See {ITrustedIssuersRegistry-getTrustedIssuerClaimTopics}."
+				},
+				"getTrustedIssuers()": {
+					"details": "See {ITrustedIssuersRegistry-getTrustedIssuers}."
+				},
+				"hasClaimTopic(address,uint256)": {
+					"details": "See {ITrustedIssuersRegistry-hasClaimTopic}."
+				},
+				"isTrustedIssuer(address)": {
+					"details": "See {ITrustedIssuersRegistry-isTrustedIssuer}."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"removeTrustedIssuer(address)": {
+					"details": "See {ITrustedIssuersRegistry-removeTrustedIssuer}."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"transferOwnershipOnIssuersRegistryContract(address)": {
+					"details": "See {ITrustedIssuersRegistry-transferOwnershipOnIssuersRegistryContract}."
+				},
+				"updateIssuerClaimTopics(address,uint256[])": {
+					"details": "See {ITrustedIssuersRegistry-updateIssuerClaimTopics}."
+				}
+			},
+			"stateVariables": {
+				"trustedIssuerClaimTopics": {
+					"details": "Mapping between a trusted issuer index and its corresponding claimTopics."
+				},
+				"trustedIssuers": {
+					"details": "Array containing all TrustedIssuers identity contract address."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"ClaimTopicsUpdated(address,uint256[])": {
+					"notice": "this event is emitted when the set of claim topics is changed for a given trusted issuer.  the event is emitted by the updateIssuerClaimTopics function  `trustedIssuer` is the address of the trusted issuer's ClaimIssuer contract  `claimTopics` is the set of claims that the trusted issuer is allowed to emit"
+				},
+				"TrustedIssuerAdded(address,uint256[])": {
+					"notice": "this event is emitted when a trusted issuer is added in the registry.  the event is emitted by the addTrustedIssuer function  `trustedIssuer` is the address of the trusted issuer's ClaimIssuer contract  `claimTopics` is the set of claims that the trusted issuer is allowed to emit"
+				},
+				"TrustedIssuerRemoved(address)": {
+					"notice": "this event is emitted when a trusted issuer is removed from the registry.  the event is emitted by the removeTrustedIssuer function  `trustedIssuer` is the address of the trusted issuer's ClaimIssuer contract"
+				}
+			},
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/registry/TrustedIssuersRegistry.sol": "TrustedIssuersRegistry"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@onchain-id/solidity/contracts/interface/IClaimIssuer.sol": {
+			"keccak256": "0xd0493be7cb7342962b46f8e2afdca4614ea0fe34a7f493b2da9db7d361a9042c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://105232aae24e3d0fcb4c80c00793b61b6019f6127c0ec6f9e3082ae01b2e778b",
+				"dweb:/ipfs/QmV5C1wbq7H5H6DiakafSX5agAAP6rQSZ5qq7Qgq6VLkXo"
+			]
+		},
+		"@onchain-id/solidity/contracts/interface/IERC734.sol": {
+			"keccak256": "0x3302de9e9fe7a548cb7395b6fda38f952f6a6d1c599dfeee181a1ef80741fc1d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://fc9f00e5b2f1523fecf52b1a833e9263a53edbebb7d1458f9004cfd41dd0402e",
+				"dweb:/ipfs/QmWcNcVQrg66KeQz39jPgJun7jF3CbdJKHQa19q97n5Hzb"
+			]
+		},
+		"@onchain-id/solidity/contracts/interface/IERC735.sol": {
+			"keccak256": "0x3b77ce6012a96cf0075197cdeb1b98b66ca1722ef23241e40ba6185f03bf4584",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://766e139f0c3cc0c6489561e75df0d8eab8c277f90009e4fa19add4f22bb40d82",
+				"dweb:/ipfs/QmcbAReZn9nLcnYn9AHiDmcYJ42JqAU5QSy4dKhUcJUnjy"
+			]
+		},
+		"@onchain-id/solidity/contracts/interface/IIdentity.sol": {
+			"keccak256": "0xdcefbe2a850f9f43e959b9f7ed93fd5b35f29ff3dfbfaac7530af737c9eba7c6",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2e887c7cc67fdb2710c48bed22dbb27880f6dfb84ee93178ad4fcd659099cb96",
+				"dweb:/ipfs/QmUuDEsZJC7uQQEErmuNJzePsNgHiTDdS2TuMzG1GRqrC3"
+			]
+		},
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"contracts/registry/ITrustedIssuersRegistry.sol": {
+			"keccak256": "0x01af20f2f537db3122c60b7c6e60e5036e07c673ef9762428b42129f65fcbc60",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://28f514b876c975777fe84bdb9f96ec5c687e4e4ff5d2b14961ba61affc57d46c",
+				"dweb:/ipfs/QmdbVRsg1Q71PVHYxy1r7e5MeiMN5hHHDD8vRnXBSr8JiV"
+			]
+		},
+		"contracts/registry/TrustedIssuersRegistry.sol": {
+			"keccak256": "0xeb871277304a1dd95485ea678ab4183829fb8ea073d53db7204fe8a8923654d8",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7add52f3520dfa9567ee11da9dae21728d6c9b74d909fd08728c6d3c80cb5aa9",
+				"dweb:/ipfs/QmWDrJdo4DbFFNnv1qudieymctfp5pHBgHvh6HwW4DM6Zc"
+			]
+		}
+	},
+	"version": 1
+}

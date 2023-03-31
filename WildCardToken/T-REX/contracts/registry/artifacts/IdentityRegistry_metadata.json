@@ -1,0 +1,795 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_trustedIssuersRegistry",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_claimTopicsRegistry",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_identityStorage",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_agent",
+						"type": "address"
+					}
+				],
+				"name": "AgentAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_agent",
+						"type": "address"
+					}
+				],
+				"name": "AgentRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "claimTopicsRegistry",
+						"type": "address"
+					}
+				],
+				"name": "ClaimTopicsRegistrySet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "investorAddress",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint16",
+						"name": "country",
+						"type": "uint16"
+					}
+				],
+				"name": "CountryUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "investorAddress",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IIdentity",
+						"name": "identity",
+						"type": "address"
+					}
+				],
+				"name": "IdentityRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "investorAddress",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IIdentity",
+						"name": "identity",
+						"type": "address"
+					}
+				],
+				"name": "IdentityRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "identityStorage",
+						"type": "address"
+					}
+				],
+				"name": "IdentityStorageSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract IIdentity",
+						"name": "oldIdentity",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IIdentity",
+						"name": "newIdentity",
+						"type": "address"
+					}
+				],
+				"name": "IdentityUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "trustedIssuersRegistry",
+						"type": "address"
+					}
+				],
+				"name": "TrustedIssuersRegistrySet",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_agent",
+						"type": "address"
+					}
+				],
+				"name": "addAgent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_agent",
+						"type": "address"
+					}
+				],
+				"name": "addAgentOnIdentityRegistryContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "_userAddresses",
+						"type": "address[]"
+					},
+					{
+						"internalType": "contract IIdentity[]",
+						"name": "_identities",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint16[]",
+						"name": "_countries",
+						"type": "uint16[]"
+					}
+				],
+				"name": "batchRegisterIdentity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "contains",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "deleteIdentity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "identity",
+				"outputs": [
+					{
+						"internalType": "contract IIdentity",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "identityStorage",
+				"outputs": [
+					{
+						"internalType": "contract IIdentityRegistryStorage",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "investorCountry",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_agent",
+						"type": "address"
+					}
+				],
+				"name": "isAgent",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "isVerified",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "issuersRegistry",
+				"outputs": [
+					{
+						"internalType": "contract ITrustedIssuersRegistry",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IIdentity",
+						"name": "_identity",
+						"type": "address"
+					},
+					{
+						"internalType": "uint16",
+						"name": "_country",
+						"type": "uint16"
+					}
+				],
+				"name": "registerIdentity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_agent",
+						"type": "address"
+					}
+				],
+				"name": "removeAgent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_agent",
+						"type": "address"
+					}
+				],
+				"name": "removeAgentOnIdentityRegistryContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_claimTopicsRegistry",
+						"type": "address"
+					}
+				],
+				"name": "setClaimTopicsRegistry",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_identityRegistryStorage",
+						"type": "address"
+					}
+				],
+				"name": "setIdentityRegistryStorage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_trustedIssuersRegistry",
+						"type": "address"
+					}
+				],
+				"name": "setTrustedIssuersRegistry",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "topicsRegistry",
+				"outputs": [
+					{
+						"internalType": "contract IClaimTopicsRegistry",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnershipOnIdentityRegistryContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint16",
+						"name": "_country",
+						"type": "uint16"
+					}
+				],
+				"name": "updateCountry",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IIdentity",
+						"name": "_identity",
+						"type": "address"
+					}
+				],
+				"name": "updateIdentity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addAgentOnIdentityRegistryContract(address)": {
+					"details": "See {IIdentityRegistry-addAgentOnIdentityRegistryContract}."
+				},
+				"batchRegisterIdentity(address[],address[],uint16[])": {
+					"details": "See {IIdentityRegistry-batchRegisterIdentity}."
+				},
+				"constructor": {
+					"details": "the constructor initiates the Identity Registry smart contract",
+					"params": {
+						"_claimTopicsRegistry": "the claim topics registry linked to the Identity Registry",
+						"_identityStorage": "the identity registry storage linked to the Identity Registry  emits a `ClaimTopicsRegistrySet` event  emits a `TrustedIssuersRegistrySet` event  emits an `IdentityStorageSet` event",
+						"_trustedIssuersRegistry": "the trusted issuers registry linked to the Identity Registry"
+					}
+				},
+				"contains(address)": {
+					"details": "See {IIdentityRegistry-contains}."
+				},
+				"deleteIdentity(address)": {
+					"details": "See {IIdentityRegistry-deleteIdentity}."
+				},
+				"identity(address)": {
+					"details": "See {IIdentityRegistry-identity}."
+				},
+				"identityStorage()": {
+					"details": "See {IIdentityRegistry-identityStorage}."
+				},
+				"investorCountry(address)": {
+					"details": "See {IIdentityRegistry-investorCountry}."
+				},
+				"isVerified(address)": {
+					"details": "See {IIdentityRegistry-isVerified}."
+				},
+				"issuersRegistry()": {
+					"details": "See {IIdentityRegistry-issuersRegistry}."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"registerIdentity(address,address,uint16)": {
+					"details": "See {IIdentityRegistry-registerIdentity}."
+				},
+				"removeAgentOnIdentityRegistryContract(address)": {
+					"details": "See {IIdentityRegistry-removeAgentOnIdentityRegistryContract}."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setClaimTopicsRegistry(address)": {
+					"details": "See {IIdentityRegistry-setClaimTopicsRegistry}."
+				},
+				"setIdentityRegistryStorage(address)": {
+					"details": "See {IIdentityRegistry-setIdentityRegistryStorage}."
+				},
+				"setTrustedIssuersRegistry(address)": {
+					"details": "See {IIdentityRegistry-setTrustedIssuersRegistry}."
+				},
+				"topicsRegistry()": {
+					"details": "See {IIdentityRegistry-topicsRegistry}."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"transferOwnershipOnIdentityRegistryContract(address)": {
+					"details": "See {IIdentityRegistry-transferOwnershipOnIdentityRegistryContract}."
+				},
+				"updateCountry(address,uint16)": {
+					"details": "See {IIdentityRegistry-updateCountry}."
+				},
+				"updateIdentity(address,address)": {
+					"details": "See {IIdentityRegistry-updateIdentity}."
+				}
+			},
+			"stateVariables": {
+				"tokenIdentityStorage": {
+					"details": "Address of the IdentityRegistryStorage Contract"
+				},
+				"tokenIssuersRegistry": {
+					"details": "Address of the TrustedIssuersRegistry Contract"
+				},
+				"tokenTopicsRegistry": {
+					"details": "Address of the ClaimTopicsRegistry Contract"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"ClaimTopicsRegistrySet(address)": {
+					"notice": "this event is emitted when the ClaimTopicsRegistry has been set for the IdentityRegistry  the event is emitted by the IdentityRegistry constructor  `claimTopicsRegistry` is the address of the Claim Topics Registry contract"
+				},
+				"CountryUpdated(address,uint16)": {
+					"notice": "this event is emitted when an Identity's country has been updated  the event is emitted by the 'updateCountry' function  `investorAddress` is the address on which the country has been updated  `country` is the numeric code (ISO 3166-1) of the new country"
+				},
+				"IdentityRegistered(address,address)": {
+					"notice": "this event is emitted when an Identity is registered into the Identity Registry.  the event is emitted by the 'registerIdentity' function  `investorAddress` is the address of the investor's wallet  `identity` is the address of the Identity smart contract (onchainID)"
+				},
+				"IdentityRemoved(address,address)": {
+					"notice": "this event is emitted when an Identity is removed from the Identity Registry.  the event is emitted by the 'deleteIdentity' function  `investorAddress` is the address of the investor's wallet  `identity` is the address of the Identity smart contract (onchainID)"
+				},
+				"IdentityStorageSet(address)": {
+					"notice": "this event is emitted when the IdentityRegistryStorage has been set for the IdentityRegistry  the event is emitted by the IdentityRegistry constructor  `identityStorage` is the address of the Identity Registry Storage contract"
+				},
+				"IdentityUpdated(address,address)": {
+					"notice": "this event is emitted when an Identity has been updated  the event is emitted by the 'updateIdentity' function  `oldIdentity` is the old Identity contract's address to update  `newIdentity` is the new Identity contract's"
+				},
+				"TrustedIssuersRegistrySet(address)": {
+					"notice": "this event is emitted when the ClaimTopicsRegistry has been set for the IdentityRegistry  the event is emitted by the IdentityRegistry constructor  `trustedIssuersRegistry` is the address of the Trusted Issuers Registry contract"
+				}
+			},
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/registry/IdentityRegistry.sol": "IdentityRegistry"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@onchain-id/solidity/contracts/interface/IClaimIssuer.sol": {
+			"keccak256": "0xd0493be7cb7342962b46f8e2afdca4614ea0fe34a7f493b2da9db7d361a9042c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://105232aae24e3d0fcb4c80c00793b61b6019f6127c0ec6f9e3082ae01b2e778b",
+				"dweb:/ipfs/QmV5C1wbq7H5H6DiakafSX5agAAP6rQSZ5qq7Qgq6VLkXo"
+			]
+		},
+		"@onchain-id/solidity/contracts/interface/IERC734.sol": {
+			"keccak256": "0x3302de9e9fe7a548cb7395b6fda38f952f6a6d1c599dfeee181a1ef80741fc1d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://fc9f00e5b2f1523fecf52b1a833e9263a53edbebb7d1458f9004cfd41dd0402e",
+				"dweb:/ipfs/QmWcNcVQrg66KeQz39jPgJun7jF3CbdJKHQa19q97n5Hzb"
+			]
+		},
+		"@onchain-id/solidity/contracts/interface/IERC735.sol": {
+			"keccak256": "0x3b77ce6012a96cf0075197cdeb1b98b66ca1722ef23241e40ba6185f03bf4584",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://766e139f0c3cc0c6489561e75df0d8eab8c277f90009e4fa19add4f22bb40d82",
+				"dweb:/ipfs/QmcbAReZn9nLcnYn9AHiDmcYJ42JqAU5QSy4dKhUcJUnjy"
+			]
+		},
+		"@onchain-id/solidity/contracts/interface/IIdentity.sol": {
+			"keccak256": "0xdcefbe2a850f9f43e959b9f7ed93fd5b35f29ff3dfbfaac7530af737c9eba7c6",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2e887c7cc67fdb2710c48bed22dbb27880f6dfb84ee93178ad4fcd659099cb96",
+				"dweb:/ipfs/QmUuDEsZJC7uQQEErmuNJzePsNgHiTDdS2TuMzG1GRqrC3"
+			]
+		},
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"contracts/registry/IClaimTopicsRegistry.sol": {
+			"keccak256": "0x95f8fa17a716771125b203f00890eceb20ac3807f7a39a25b644427b1ff81d61",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://460dceb9e88957d5ce002b80748767c80a7e146c9b38b055a3c1ca04586b2009",
+				"dweb:/ipfs/QmVdqEpGMRzSpLKBCtPzaPGatBgUyNm3NS5rQnkkYMnc1C"
+			]
+		},
+		"contracts/registry/IIdentityRegistry.sol": {
+			"keccak256": "0x16a31f2d35143f99cc6b83d0cf6e9da9543c2b8561712079098f3a39d12ae32a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7669a9272b1df8e27e0fc3f5f64977b2b16615e585b673383db1eb157a62bf7c",
+				"dweb:/ipfs/QmQzXmoFcFyBPehPyiUzGjaKfXJHLEPZMtFTBTgjuCavah"
+			]
+		},
+		"contracts/registry/IIdentityRegistryStorage.sol": {
+			"keccak256": "0x8cd4de1e77c5da8ca2ff732069bc184aef86bcb94f95a5229e5bd6336abbd06d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f88894a3d046940be03a12cc2da3b3fb6efb51e0461fbea060a9a3190cadcf16",
+				"dweb:/ipfs/QmNndZUPdpc83A9LungeAsrcencq3CzTum1tkU6KVdSRNC"
+			]
+		},
+		"contracts/registry/ITrustedIssuersRegistry.sol": {
+			"keccak256": "0x01af20f2f537db3122c60b7c6e60e5036e07c673ef9762428b42129f65fcbc60",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://28f514b876c975777fe84bdb9f96ec5c687e4e4ff5d2b14961ba61affc57d46c",
+				"dweb:/ipfs/QmdbVRsg1Q71PVHYxy1r7e5MeiMN5hHHDD8vRnXBSr8JiV"
+			]
+		},
+		"contracts/registry/IdentityRegistry.sol": {
+			"keccak256": "0xc19f06ceb642132f82a80716e55ba4106243dbad9898652799983cf4749e65d5",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://16b758e2101194da7666ed1ca1f872d14b6e1609bb22122ba1f7bb352c3ee681",
+				"dweb:/ipfs/QmR5FouZmMK3Bm3HeLqdxQSUN2xnCCY3kw1u4eytfWJjVV"
+			]
+		},
+		"contracts/roles/AgentRole.sol": {
+			"keccak256": "0x2a264adff17bd254164e69c882dc033d8b7e9bc6eab01c5e7d2ad26324a2c953",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://585dfaafc7e37d38ff6f0c5ca4a8e0ad1e92b0babd1f54762bfaa8c67c1ec2d7",
+				"dweb:/ipfs/QmXVnTvX1zVVQoxSZBgKRptSVz22T2vyXC3P89Bsv9x7Jg"
+			]
+		},
+		"contracts/roles/Roles.sol": {
+			"keccak256": "0x9e018cafd4e2a2890d4ed32f0a4e5edf92fe95000f35b15d7932890bd0efdb95",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6c07fd269689b662d782817bc4fdfc00d33fd7e320c20916528fff7853847954",
+				"dweb:/ipfs/QmUz39kdgQM8M2W2gcBZ8Vi3mzzSmXUx9NXxTJatYYQJyw"
+			]
+		}
+	},
+	"version": 1
+}

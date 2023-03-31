@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getImplementation",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/proxy/TokenProxy.sol": "IImplementationAuthority"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/proxy/TokenProxy.sol": {
+			"keccak256": "0x0cdc6335a6daae1e9d6b75fca4563b94b1235501d198f32823145cffe1379ea5",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://38cf9f998b054b314d75283b4e491f4b59c74cd5de7365fc2d270dcc765ee7b3",
+				"dweb:/ipfs/QmQMgshRmsGCYLynGXXZ1CqLAEKs3eaVcRZrg5bbEFFjnp"
+			]
+		}
+	},
+	"version": 1
+}

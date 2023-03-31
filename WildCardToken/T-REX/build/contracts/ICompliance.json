@@ -1,0 +1,2720 @@
+{
+  "contractName": "ICompliance",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_agentAddress",
+          "type": "address"
+        }
+      ],
+      "name": "TokenAgentAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_agentAddress",
+          "type": "address"
+        }
+      ],
+      "name": "TokenAgentRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "TokenBound",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "TokenUnbound",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_agentAddress",
+          "type": "address"
+        }
+      ],
+      "name": "isTokenAgent",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "isTokenBound",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_agentAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addTokenAgent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_agentAddress",
+          "type": "address"
+        }
+      ],
+      "name": "removeTokenAgent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "bindToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "unbindToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "canTransfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferred",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "created",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "destroyed",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnershipOnComplianceContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_agentAddress\",\"type\":\"address\"}],\"name\":\"TokenAgentAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_agentAddress\",\"type\":\"address\"}],\"name\":\"TokenAgentRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"TokenBound\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"TokenUnbound\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_agentAddress\",\"type\":\"address\"}],\"name\":\"addTokenAgent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"bindToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"canTransfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"created\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"destroyed\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_agentAddress\",\"type\":\"address\"}],\"name\":\"isTokenAgent\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"isTokenBound\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_agentAddress\",\"type\":\"address\"}],\"name\":\"removeTokenAgent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnershipOnComplianceContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"transferred\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"unbindToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addTokenAgent(address)\":{\"details\":\"adds an agent to the list of token agents\",\"params\":{\"_agentAddress\":\"address of the agent to be added  Emits a TokenAgentAdded event\"}},\"bindToken(address)\":{\"details\":\"binds a token to the compliance contract\",\"params\":{\"_token\":\"address of the token to bind  Emits a TokenBound event\"}},\"canTransfer(address,address,uint256)\":{\"details\":\"checks that the transfer is compliant.  default compliance always returns true  READ ONLY FUNCTION, this function cannot be used to increment  counters, emit events, ...\",\"params\":{\"_amount\":\"The amount of tokens involved in the transfer\",\"_from\":\"The address of the sender\",\"_to\":\"The address of the receiver\"}},\"created(address,uint256)\":{\"details\":\"function called whenever tokens are created  on a wallet  this function can update state variables in the compliance contract  these state variables being used by `canTransfer` to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the compliance smart contract\",\"params\":{\"_amount\":\"The amount of tokens involved in the transfer\",\"_to\":\"The address of the receiver\"}},\"destroyed(address,uint256)\":{\"details\":\"function called whenever tokens are destroyed  this function can update state variables in the compliance contract  these state variables being used by `canTransfer` to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the compliance smart contract\",\"params\":{\"_amount\":\"The amount of tokens involved in the transfer\",\"_from\":\"The address of the receiver\"}},\"isTokenAgent(address)\":{\"details\":\"Returns true if the Address is in the list of token agents\",\"params\":{\"_agentAddress\":\"address of this agent\"}},\"isTokenBound(address)\":{\"details\":\"Returns true if the address given corresponds to a token that is bound with the Compliance contract\",\"params\":{\"_token\":\"address of the token\"}},\"removeTokenAgent(address)\":{\"details\":\"remove Agent from the list of token agents\",\"params\":{\"_agentAddress\":\"address of the agent to be removed (must be added first)  Emits a TokenAgentRemoved event\"}},\"transferOwnershipOnComplianceContract(address)\":{\"details\":\"function used to transfer the ownership of the compliance contract  to a new owner, giving him access to the `OnlyOwner` functions implemented on the contract\",\"params\":{\"newOwner\":\"The address of the new owner of the compliance contract  This function can only be called by the owner of the compliance contract  emits an `OwnershipTransferred` event\"}},\"transferred(address,address,uint256)\":{\"details\":\"function called whenever tokens are transferred  from one wallet to another  this function can update state variables in the compliance contract  these state variables being used by `canTransfer` to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the compliance smart contract\",\"params\":{\"_amount\":\"The amount of tokens involved in the transfer\",\"_from\":\"The address of the sender\",\"_to\":\"The address of the receiver\"}},\"unbindToken(address)\":{\"details\":\"unbinds a token from the compliance contract\",\"params\":{\"_token\":\"address of the token to unbind  Emits a TokenUnbound event\"}}},\"version\":1},\"userdoc\":{\"events\":{\"TokenAgentAdded(address)\":{\"notice\":\"this event is emitted when the Agent has been added on the allowedList of this Compliance.  the event is emitted by the Compliance constructor and by the addTokenAgent function  `_agentAddress` is the address of the Agent to add\"},\"TokenAgentRemoved(address)\":{\"notice\":\"this event is emitted when the Agent has been removed from the agent list of this Compliance.  the event is emitted by the Compliance constructor and by the removeTokenAgent function  `_agentAddress` is the address of the Agent to remove\"},\"TokenBound(address)\":{\"notice\":\"this event is emitted when a token has been bound to the compliance contract  the event is emitted by the bindToken function  `_token` is the address of the token to bind\"},\"TokenUnbound(address)\":{\"notice\":\"this event is emitted when a token has been unbound from the compliance contract  the event is emitted by the unbindToken function  `_token` is the address of the token to unbind\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/compliance/ICompliance.sol\":\"ICompliance\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/compliance/ICompliance.sol\":{\"keccak256\":\"0x4049905b34eab118c0c3f644450299a5ed8022bbbdb26036e7c2854dae8ae1ba\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://f8144953d88f543b2f537514f1136b8adf705837ba6d420b95569f6895153edb\",\"dweb:/ipfs/QmRqM7A6XrofFR67k8RtNNEkriAbKsQHDgUYaKZTMr9Nm5\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL-3.0\n\n/**\n *     NOTICE\n *\n *     The T-REX software is licensed under a proprietary license or the GPL v.3.\n *     If you choose to receive it under the GPL v.3 license, the following applies:\n *     T-REX is a suite of smart contracts developed by Tokeny to manage and transfer financial assets on the ethereum blockchain\n *\n *     Copyright (C) 2021, Tokeny sàrl.\n *\n *     This program is free software: you can redistribute it and/or modify\n *     it under the terms of the GNU General Public License as published by\n *     the Free Software Foundation, either version 3 of the License, or\n *     (at your option) any later version.\n *\n *     This program is distributed in the hope that it will be useful,\n *     but WITHOUT ANY WARRANTY; without even the implied warranty of\n *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n *     GNU General Public License for more details.\n *\n *     You should have received a copy of the GNU General Public License\n *     along with this program.  If not, see <https://www.gnu.org/licenses/>.\n */\n\npragma solidity ^0.8.0;\n\ninterface ICompliance {\n    /**\n     *  this event is emitted when the Agent has been added on the allowedList of this Compliance.\n     *  the event is emitted by the Compliance constructor and by the addTokenAgent function\n     *  `_agentAddress` is the address of the Agent to add\n     */\n    event TokenAgentAdded(address _agentAddress);\n\n    /**\n     *  this event is emitted when the Agent has been removed from the agent list of this Compliance.\n     *  the event is emitted by the Compliance constructor and by the removeTokenAgent function\n     *  `_agentAddress` is the address of the Agent to remove\n     */\n    event TokenAgentRemoved(address _agentAddress);\n\n    /**\n     *  this event is emitted when a token has been bound to the compliance contract\n     *  the event is emitted by the bindToken function\n     *  `_token` is the address of the token to bind\n     */\n    event TokenBound(address _token);\n\n    /**\n     *  this event is emitted when a token has been unbound from the compliance contract\n     *  the event is emitted by the unbindToken function\n     *  `_token` is the address of the token to unbind\n     */\n    event TokenUnbound(address _token);\n\n    /**\n     *  @dev Returns true if the Address is in the list of token agents\n     *  @param _agentAddress address of this agent\n     */\n    function isTokenAgent(address _agentAddress) external view returns (bool);\n\n    /**\n     *  @dev Returns true if the address given corresponds to a token that is bound with the Compliance contract\n     *  @param _token address of the token\n     */\n    function isTokenBound(address _token) external view returns (bool);\n\n    /**\n     *  @dev adds an agent to the list of token agents\n     *  @param _agentAddress address of the agent to be added\n     *  Emits a TokenAgentAdded event\n     */\n    function addTokenAgent(address _agentAddress) external;\n\n    /**\n     *  @dev remove Agent from the list of token agents\n     *  @param _agentAddress address of the agent to be removed (must be added first)\n     *  Emits a TokenAgentRemoved event\n     */\n    function removeTokenAgent(address _agentAddress) external;\n\n    /**\n     *  @dev binds a token to the compliance contract\n     *  @param _token address of the token to bind\n     *  Emits a TokenBound event\n     */\n    function bindToken(address _token) external;\n\n    /**\n     *  @dev unbinds a token from the compliance contract\n     *  @param _token address of the token to unbind\n     *  Emits a TokenUnbound event\n     */\n    function unbindToken(address _token) external;\n\n    /**\n     *  @dev checks that the transfer is compliant.\n     *  default compliance always returns true\n     *  READ ONLY FUNCTION, this function cannot be used to increment\n     *  counters, emit events, ...\n     *  @param _from The address of the sender\n     *  @param _to The address of the receiver\n     *  @param _amount The amount of tokens involved in the transfer\n     */\n    function canTransfer(\n        address _from,\n        address _to,\n        uint256 _amount\n    ) external view returns (bool);\n\n    /**\n     *  @dev function called whenever tokens are transferred\n     *  from one wallet to another\n     *  this function can update state variables in the compliance contract\n     *  these state variables being used by `canTransfer` to decide if a transfer\n     *  is compliant or not depending on the values stored in these state variables and on\n     *  the parameters of the compliance smart contract\n     *  @param _from The address of the sender\n     *  @param _to The address of the receiver\n     *  @param _amount The amount of tokens involved in the transfer\n     */\n    function transferred(\n        address _from,\n        address _to,\n        uint256 _amount\n    ) external;\n\n    /**\n     *  @dev function called whenever tokens are created\n     *  on a wallet\n     *  this function can update state variables in the compliance contract\n     *  these state variables being used by `canTransfer` to decide if a transfer\n     *  is compliant or not depending on the values stored in these state variables and on\n     *  the parameters of the compliance smart contract\n     *  @param _to The address of the receiver\n     *  @param _amount The amount of tokens involved in the transfer\n     */\n    function created(address _to, uint256 _amount) external;\n\n    /**\n     *  @dev function called whenever tokens are destroyed\n     *  this function can update state variables in the compliance contract\n     *  these state variables being used by `canTransfer` to decide if a transfer\n     *  is compliant or not depending on the values stored in these state variables and on\n     *  the parameters of the compliance smart contract\n     *  @param _from The address of the receiver\n     *  @param _amount The amount of tokens involved in the transfer\n     */\n    function destroyed(address _from, uint256 _amount) external;\n\n    /**\n     *  @dev function used to transfer the ownership of the compliance contract\n     *  to a new owner, giving him access to the `OnlyOwner` functions implemented on the contract\n     *  @param newOwner The address of the new owner of the compliance contract\n     *  This function can only be called by the owner of the compliance contract\n     *  emits an `OwnershipTransferred` event\n     */\n    function transferOwnershipOnComplianceContract(address newOwner) external;\n}\n",
+  "sourcePath": "/home/mayank/Desktop/security-token-5/Prototype--Craye-Realstate/T-REX/contracts/compliance/ICompliance.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/compliance/ICompliance.sol",
+    "exportedSymbols": {
+      "ICompliance": [
+        9302
+      ]
+    },
+    "id": 9303,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9197,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1094:23:36"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ICompliance",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 9302,
+        "linearizedBaseContracts": [
+          9302
+        ],
+        "name": "ICompliance",
+        "nameLocation": "1129:11:36",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 9198,
+              "nodeType": "StructuredDocumentation",
+              "src": "1147:262:36",
+              "text": "  this event is emitted when the Agent has been added on the allowedList of this Compliance.\n  the event is emitted by the Compliance constructor and by the addTokenAgent function\n  `_agentAddress` is the address of the Agent to add"
+            },
+            "eventSelector": "d62c45e13ac30396aceb3ad37c89bd1ba9048032fe61679000e92eb93dbfd67d",
+            "id": 9202,
+            "name": "TokenAgentAdded",
+            "nameLocation": "1420:15:36",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9201,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9200,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "1444:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9202,
+                  "src": "1436:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9199,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1436:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1435:23:36"
+            },
+            "src": "1414:45:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 9203,
+              "nodeType": "StructuredDocumentation",
+              "src": "1465:271:36",
+              "text": "  this event is emitted when the Agent has been removed from the agent list of this Compliance.\n  the event is emitted by the Compliance constructor and by the removeTokenAgent function\n  `_agentAddress` is the address of the Agent to remove"
+            },
+            "eventSelector": "6a659bb87bb23efbdc295f8eed8ae8c4379bfb77660ced2ef0f3d7d26b05c6a6",
+            "id": 9207,
+            "name": "TokenAgentRemoved",
+            "nameLocation": "1747:17:36",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9206,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9205,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "1773:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9207,
+                  "src": "1765:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9204,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1765:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1764:23:36"
+            },
+            "src": "1741:47:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 9208,
+              "nodeType": "StructuredDocumentation",
+              "src": "1794:204:36",
+              "text": "  this event is emitted when a token has been bound to the compliance contract\n  the event is emitted by the bindToken function\n  `_token` is the address of the token to bind"
+            },
+            "eventSelector": "2de35142b19ed5a07796cf30791959c592018f70b1d2d7c460eef8ffe713692b",
+            "id": 9212,
+            "name": "TokenBound",
+            "nameLocation": "2009:10:36",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9211,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9210,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "2028:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9212,
+                  "src": "2020:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9209,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2020:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2019:16:36"
+            },
+            "src": "2003:33:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 9213,
+              "nodeType": "StructuredDocumentation",
+              "src": "2042:212:36",
+              "text": "  this event is emitted when a token has been unbound from the compliance contract\n  the event is emitted by the unbindToken function\n  `_token` is the address of the token to unbind"
+            },
+            "eventSelector": "28a4ca7134a3b3f9aff286e79ad3daadb4a06d1b43d037a3a98bdc074edd9b7a",
+            "id": 9217,
+            "name": "TokenUnbound",
+            "nameLocation": "2265:12:36",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9216,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9215,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "2286:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9217,
+                  "src": "2278:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9214,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2278:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2277:16:36"
+            },
+            "src": "2259:35:36"
+          },
+          {
+            "documentation": {
+              "id": 9218,
+              "nodeType": "StructuredDocumentation",
+              "src": "2300:134:36",
+              "text": "  @dev Returns true if the Address is in the list of token agents\n  @param _agentAddress address of this agent"
+            },
+            "functionSelector": "346531fa",
+            "id": 9225,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isTokenAgent",
+            "nameLocation": "2448:12:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9220,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "2469:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9225,
+                  "src": "2461:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9219,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2461:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2460:23:36"
+            },
+            "returnParameters": {
+              "id": 9224,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9223,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9225,
+                  "src": "2507:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9222,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2507:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2506:6:36"
+            },
+            "scope": 9302,
+            "src": "2439:74:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9226,
+              "nodeType": "StructuredDocumentation",
+              "src": "2519:167:36",
+              "text": "  @dev Returns true if the address given corresponds to a token that is bound with the Compliance contract\n  @param _token address of the token"
+            },
+            "functionSelector": "993e8b95",
+            "id": 9233,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isTokenBound",
+            "nameLocation": "2700:12:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9229,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9228,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "2721:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9233,
+                  "src": "2713:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9227,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2713:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2712:16:36"
+            },
+            "returnParameters": {
+              "id": 9232,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9231,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9233,
+                  "src": "2752:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9230,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2752:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2751:6:36"
+            },
+            "scope": 9302,
+            "src": "2691:67:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9234,
+              "nodeType": "StructuredDocumentation",
+              "src": "2764:166:36",
+              "text": "  @dev adds an agent to the list of token agents\n  @param _agentAddress address of the agent to be added\n  Emits a TokenAgentAdded event"
+            },
+            "functionSelector": "ff3e6954",
+            "id": 9239,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addTokenAgent",
+            "nameLocation": "2944:13:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9237,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9236,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "2966:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9239,
+                  "src": "2958:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9235,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2958:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2957:23:36"
+            },
+            "returnParameters": {
+              "id": 9238,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2989:0:36"
+            },
+            "scope": 9302,
+            "src": "2935:55:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9240,
+              "nodeType": "StructuredDocumentation",
+              "src": "2996:193:36",
+              "text": "  @dev remove Agent from the list of token agents\n  @param _agentAddress address of the agent to be removed (must be added first)\n  Emits a TokenAgentRemoved event"
+            },
+            "functionSelector": "cdde2932",
+            "id": 9245,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeTokenAgent",
+            "nameLocation": "3203:16:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9243,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9242,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "3228:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9245,
+                  "src": "3220:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9241,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3220:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3219:23:36"
+            },
+            "returnParameters": {
+              "id": 9244,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3251:0:36"
+            },
+            "scope": 9302,
+            "src": "3194:58:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9246,
+              "nodeType": "StructuredDocumentation",
+              "src": "3258:149:36",
+              "text": "  @dev binds a token to the compliance contract\n  @param _token address of the token to bind\n  Emits a TokenBound event"
+            },
+            "functionSelector": "3ff5aa02",
+            "id": 9251,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "bindToken",
+            "nameLocation": "3421:9:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9249,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9248,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "3439:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9251,
+                  "src": "3431:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9247,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3431:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3430:16:36"
+            },
+            "returnParameters": {
+              "id": 9250,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3455:0:36"
+            },
+            "scope": 9302,
+            "src": "3412:44:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9252,
+              "nodeType": "StructuredDocumentation",
+              "src": "3462:157:36",
+              "text": "  @dev unbinds a token from the compliance contract\n  @param _token address of the token to unbind\n  Emits a TokenUnbound event"
+            },
+            "functionSelector": "40db3b50",
+            "id": 9257,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unbindToken",
+            "nameLocation": "3633:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9254,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "3653:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9257,
+                  "src": "3645:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9253,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3645:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3644:16:36"
+            },
+            "returnParameters": {
+              "id": 9256,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3669:0:36"
+            },
+            "scope": 9302,
+            "src": "3624:46:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9258,
+              "nodeType": "StructuredDocumentation",
+              "src": "3676:378:36",
+              "text": "  @dev checks that the transfer is compliant.\n  default compliance always returns true\n  READ ONLY FUNCTION, this function cannot be used to increment\n  counters, emit events, ...\n  @param _from The address of the sender\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the transfer"
+            },
+            "functionSelector": "e46638e6",
+            "id": 9269,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canTransfer",
+            "nameLocation": "4068:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9265,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9260,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "4097:5:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9269,
+                  "src": "4089:13:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9259,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4089:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9262,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "4120:3:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9269,
+                  "src": "4112:11:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9261,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4112:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9264,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "4141:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9269,
+                  "src": "4133:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9263,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4133:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4079:75:36"
+            },
+            "returnParameters": {
+              "id": 9268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9267,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9269,
+                  "src": "4178:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9266,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4178:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4177:6:36"
+            },
+            "scope": 9302,
+            "src": "4059:125:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9270,
+              "nodeType": "StructuredDocumentation",
+              "src": "4190:575:36",
+              "text": "  @dev function called whenever tokens are transferred\n  from one wallet to another\n  this function can update state variables in the compliance contract\n  these state variables being used by `canTransfer` to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the compliance smart contract\n  @param _from The address of the sender\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the transfer"
+            },
+            "functionSelector": "8baf29b4",
+            "id": 9279,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferred",
+            "nameLocation": "4779:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9277,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9272,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "4808:5:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9279,
+                  "src": "4800:13:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9271,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4800:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9274,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "4831:3:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9279,
+                  "src": "4823:11:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9273,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4823:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9276,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "4852:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9279,
+                  "src": "4844:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9275,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4844:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4790:75:36"
+            },
+            "returnParameters": {
+              "id": 9278,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4874:0:36"
+            },
+            "scope": 9302,
+            "src": "4770:105:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9280,
+              "nodeType": "StructuredDocumentation",
+              "src": "4881:509:36",
+              "text": "  @dev function called whenever tokens are created\n  on a wallet\n  this function can update state variables in the compliance contract\n  these state variables being used by `canTransfer` to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the compliance smart contract\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the transfer"
+            },
+            "functionSelector": "5f8dead3",
+            "id": 9287,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "created",
+            "nameLocation": "5404:7:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9285,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9282,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "5420:3:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9287,
+                  "src": "5412:11:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9281,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5412:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9284,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "5433:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9287,
+                  "src": "5425:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9283,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5425:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5411:30:36"
+            },
+            "returnParameters": {
+              "id": 9286,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5450:0:36"
+            },
+            "scope": 9302,
+            "src": "5395:56:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9288,
+              "nodeType": "StructuredDocumentation",
+              "src": "5457:493:36",
+              "text": "  @dev function called whenever tokens are destroyed\n  this function can update state variables in the compliance contract\n  these state variables being used by `canTransfer` to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the compliance smart contract\n  @param _from The address of the receiver\n  @param _amount The amount of tokens involved in the transfer"
+            },
+            "functionSelector": "8d2ea772",
+            "id": 9295,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "destroyed",
+            "nameLocation": "5964:9:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9293,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9290,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "5982:5:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9295,
+                  "src": "5974:13:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9289,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5974:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9292,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "5997:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9295,
+                  "src": "5989:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9291,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5989:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5973:32:36"
+            },
+            "returnParameters": {
+              "id": 9294,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6014:0:36"
+            },
+            "scope": 9302,
+            "src": "5955:60:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9296,
+              "nodeType": "StructuredDocumentation",
+              "src": "6021:397:36",
+              "text": "  @dev function used to transfer the ownership of the compliance contract\n  to a new owner, giving him access to the `OnlyOwner` functions implemented on the contract\n  @param newOwner The address of the new owner of the compliance contract\n  This function can only be called by the owner of the compliance contract\n  emits an `OwnershipTransferred` event"
+            },
+            "functionSelector": "7bcf0487",
+            "id": 9301,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferOwnershipOnComplianceContract",
+            "nameLocation": "6432:37:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9299,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9298,
+                  "mutability": "mutable",
+                  "name": "newOwner",
+                  "nameLocation": "6478:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9301,
+                  "src": "6470:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9297,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6470:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6469:18:36"
+            },
+            "returnParameters": {
+              "id": 9300,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6496:0:36"
+            },
+            "scope": 9302,
+            "src": "6423:74:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9303,
+        "src": "1119:5380:36",
+        "usedErrors": []
+      }
+    ],
+    "src": "1094:5406:36"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/compliance/ICompliance.sol",
+    "exportedSymbols": {
+      "ICompliance": [
+        9302
+      ]
+    },
+    "id": 9303,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9197,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1094:23:36"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ICompliance",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 9302,
+        "linearizedBaseContracts": [
+          9302
+        ],
+        "name": "ICompliance",
+        "nameLocation": "1129:11:36",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 9198,
+              "nodeType": "StructuredDocumentation",
+              "src": "1147:262:36",
+              "text": "  this event is emitted when the Agent has been added on the allowedList of this Compliance.\n  the event is emitted by the Compliance constructor and by the addTokenAgent function\n  `_agentAddress` is the address of the Agent to add"
+            },
+            "eventSelector": "d62c45e13ac30396aceb3ad37c89bd1ba9048032fe61679000e92eb93dbfd67d",
+            "id": 9202,
+            "name": "TokenAgentAdded",
+            "nameLocation": "1420:15:36",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9201,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9200,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "1444:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9202,
+                  "src": "1436:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9199,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1436:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1435:23:36"
+            },
+            "src": "1414:45:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 9203,
+              "nodeType": "StructuredDocumentation",
+              "src": "1465:271:36",
+              "text": "  this event is emitted when the Agent has been removed from the agent list of this Compliance.\n  the event is emitted by the Compliance constructor and by the removeTokenAgent function\n  `_agentAddress` is the address of the Agent to remove"
+            },
+            "eventSelector": "6a659bb87bb23efbdc295f8eed8ae8c4379bfb77660ced2ef0f3d7d26b05c6a6",
+            "id": 9207,
+            "name": "TokenAgentRemoved",
+            "nameLocation": "1747:17:36",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9206,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9205,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "1773:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9207,
+                  "src": "1765:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9204,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1765:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1764:23:36"
+            },
+            "src": "1741:47:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 9208,
+              "nodeType": "StructuredDocumentation",
+              "src": "1794:204:36",
+              "text": "  this event is emitted when a token has been bound to the compliance contract\n  the event is emitted by the bindToken function\n  `_token` is the address of the token to bind"
+            },
+            "eventSelector": "2de35142b19ed5a07796cf30791959c592018f70b1d2d7c460eef8ffe713692b",
+            "id": 9212,
+            "name": "TokenBound",
+            "nameLocation": "2009:10:36",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9211,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9210,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "2028:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9212,
+                  "src": "2020:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9209,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2020:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2019:16:36"
+            },
+            "src": "2003:33:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 9213,
+              "nodeType": "StructuredDocumentation",
+              "src": "2042:212:36",
+              "text": "  this event is emitted when a token has been unbound from the compliance contract\n  the event is emitted by the unbindToken function\n  `_token` is the address of the token to unbind"
+            },
+            "eventSelector": "28a4ca7134a3b3f9aff286e79ad3daadb4a06d1b43d037a3a98bdc074edd9b7a",
+            "id": 9217,
+            "name": "TokenUnbound",
+            "nameLocation": "2265:12:36",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9216,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9215,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "2286:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9217,
+                  "src": "2278:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9214,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2278:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2277:16:36"
+            },
+            "src": "2259:35:36"
+          },
+          {
+            "documentation": {
+              "id": 9218,
+              "nodeType": "StructuredDocumentation",
+              "src": "2300:134:36",
+              "text": "  @dev Returns true if the Address is in the list of token agents\n  @param _agentAddress address of this agent"
+            },
+            "functionSelector": "346531fa",
+            "id": 9225,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isTokenAgent",
+            "nameLocation": "2448:12:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9220,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "2469:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9225,
+                  "src": "2461:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9219,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2461:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2460:23:36"
+            },
+            "returnParameters": {
+              "id": 9224,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9223,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9225,
+                  "src": "2507:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9222,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2507:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2506:6:36"
+            },
+            "scope": 9302,
+            "src": "2439:74:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9226,
+              "nodeType": "StructuredDocumentation",
+              "src": "2519:167:36",
+              "text": "  @dev Returns true if the address given corresponds to a token that is bound with the Compliance contract\n  @param _token address of the token"
+            },
+            "functionSelector": "993e8b95",
+            "id": 9233,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isTokenBound",
+            "nameLocation": "2700:12:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9229,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9228,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "2721:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9233,
+                  "src": "2713:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9227,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2713:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2712:16:36"
+            },
+            "returnParameters": {
+              "id": 9232,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9231,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9233,
+                  "src": "2752:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9230,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2752:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2751:6:36"
+            },
+            "scope": 9302,
+            "src": "2691:67:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9234,
+              "nodeType": "StructuredDocumentation",
+              "src": "2764:166:36",
+              "text": "  @dev adds an agent to the list of token agents\n  @param _agentAddress address of the agent to be added\n  Emits a TokenAgentAdded event"
+            },
+            "functionSelector": "ff3e6954",
+            "id": 9239,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addTokenAgent",
+            "nameLocation": "2944:13:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9237,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9236,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "2966:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9239,
+                  "src": "2958:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9235,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2958:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2957:23:36"
+            },
+            "returnParameters": {
+              "id": 9238,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2989:0:36"
+            },
+            "scope": 9302,
+            "src": "2935:55:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9240,
+              "nodeType": "StructuredDocumentation",
+              "src": "2996:193:36",
+              "text": "  @dev remove Agent from the list of token agents\n  @param _agentAddress address of the agent to be removed (must be added first)\n  Emits a TokenAgentRemoved event"
+            },
+            "functionSelector": "cdde2932",
+            "id": 9245,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeTokenAgent",
+            "nameLocation": "3203:16:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9243,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9242,
+                  "mutability": "mutable",
+                  "name": "_agentAddress",
+                  "nameLocation": "3228:13:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9245,
+                  "src": "3220:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9241,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3220:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3219:23:36"
+            },
+            "returnParameters": {
+              "id": 9244,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3251:0:36"
+            },
+            "scope": 9302,
+            "src": "3194:58:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9246,
+              "nodeType": "StructuredDocumentation",
+              "src": "3258:149:36",
+              "text": "  @dev binds a token to the compliance contract\n  @param _token address of the token to bind\n  Emits a TokenBound event"
+            },
+            "functionSelector": "3ff5aa02",
+            "id": 9251,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "bindToken",
+            "nameLocation": "3421:9:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9249,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9248,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "3439:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9251,
+                  "src": "3431:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9247,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3431:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3430:16:36"
+            },
+            "returnParameters": {
+              "id": 9250,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3455:0:36"
+            },
+            "scope": 9302,
+            "src": "3412:44:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9252,
+              "nodeType": "StructuredDocumentation",
+              "src": "3462:157:36",
+              "text": "  @dev unbinds a token from the compliance contract\n  @param _token address of the token to unbind\n  Emits a TokenUnbound event"
+            },
+            "functionSelector": "40db3b50",
+            "id": 9257,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unbindToken",
+            "nameLocation": "3633:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9254,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "3653:6:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9257,
+                  "src": "3645:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9253,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3645:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3644:16:36"
+            },
+            "returnParameters": {
+              "id": 9256,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3669:0:36"
+            },
+            "scope": 9302,
+            "src": "3624:46:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9258,
+              "nodeType": "StructuredDocumentation",
+              "src": "3676:378:36",
+              "text": "  @dev checks that the transfer is compliant.\n  default compliance always returns true\n  READ ONLY FUNCTION, this function cannot be used to increment\n  counters, emit events, ...\n  @param _from The address of the sender\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the transfer"
+            },
+            "functionSelector": "e46638e6",
+            "id": 9269,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canTransfer",
+            "nameLocation": "4068:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9265,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9260,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "4097:5:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9269,
+                  "src": "4089:13:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9259,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4089:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9262,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "4120:3:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9269,
+                  "src": "4112:11:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9261,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4112:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9264,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "4141:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9269,
+                  "src": "4133:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9263,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4133:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4079:75:36"
+            },
+            "returnParameters": {
+              "id": 9268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9267,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9269,
+                  "src": "4178:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9266,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4178:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4177:6:36"
+            },
+            "scope": 9302,
+            "src": "4059:125:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9270,
+              "nodeType": "StructuredDocumentation",
+              "src": "4190:575:36",
+              "text": "  @dev function called whenever tokens are transferred\n  from one wallet to another\n  this function can update state variables in the compliance contract\n  these state variables being used by `canTransfer` to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the compliance smart contract\n  @param _from The address of the sender\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the transfer"
+            },
+            "functionSelector": "8baf29b4",
+            "id": 9279,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferred",
+            "nameLocation": "4779:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9277,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9272,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "4808:5:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9279,
+                  "src": "4800:13:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9271,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4800:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9274,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "4831:3:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9279,
+                  "src": "4823:11:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9273,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4823:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9276,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "4852:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9279,
+                  "src": "4844:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9275,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4844:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4790:75:36"
+            },
+            "returnParameters": {
+              "id": 9278,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4874:0:36"
+            },
+            "scope": 9302,
+            "src": "4770:105:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9280,
+              "nodeType": "StructuredDocumentation",
+              "src": "4881:509:36",
+              "text": "  @dev function called whenever tokens are created\n  on a wallet\n  this function can update state variables in the compliance contract\n  these state variables being used by `canTransfer` to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the compliance smart contract\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the transfer"
+            },
+            "functionSelector": "5f8dead3",
+            "id": 9287,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "created",
+            "nameLocation": "5404:7:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9285,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9282,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "5420:3:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9287,
+                  "src": "5412:11:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9281,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5412:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9284,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "5433:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9287,
+                  "src": "5425:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9283,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5425:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5411:30:36"
+            },
+            "returnParameters": {
+              "id": 9286,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5450:0:36"
+            },
+            "scope": 9302,
+            "src": "5395:56:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9288,
+              "nodeType": "StructuredDocumentation",
+              "src": "5457:493:36",
+              "text": "  @dev function called whenever tokens are destroyed\n  this function can update state variables in the compliance contract\n  these state variables being used by `canTransfer` to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the compliance smart contract\n  @param _from The address of the receiver\n  @param _amount The amount of tokens involved in the transfer"
+            },
+            "functionSelector": "8d2ea772",
+            "id": 9295,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "destroyed",
+            "nameLocation": "5964:9:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9293,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9290,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "5982:5:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9295,
+                  "src": "5974:13:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9289,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5974:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9292,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "5997:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9295,
+                  "src": "5989:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9291,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5989:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5973:32:36"
+            },
+            "returnParameters": {
+              "id": 9294,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6014:0:36"
+            },
+            "scope": 9302,
+            "src": "5955:60:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9296,
+              "nodeType": "StructuredDocumentation",
+              "src": "6021:397:36",
+              "text": "  @dev function used to transfer the ownership of the compliance contract\n  to a new owner, giving him access to the `OnlyOwner` functions implemented on the contract\n  @param newOwner The address of the new owner of the compliance contract\n  This function can only be called by the owner of the compliance contract\n  emits an `OwnershipTransferred` event"
+            },
+            "functionSelector": "7bcf0487",
+            "id": 9301,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferOwnershipOnComplianceContract",
+            "nameLocation": "6432:37:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9299,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9298,
+                  "mutability": "mutable",
+                  "name": "newOwner",
+                  "nameLocation": "6478:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9301,
+                  "src": "6470:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9297,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6470:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6469:18:36"
+            },
+            "returnParameters": {
+              "id": 9300,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6496:0:36"
+            },
+            "scope": 9302,
+            "src": "6423:74:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9303,
+        "src": "1119:5380:36",
+        "usedErrors": []
+      }
+    ],
+    "src": "1094:5406:36"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.15+commit.e14f2714.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-08-03T10:43:51.300Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "addTokenAgent(address)": {
+        "details": "adds an agent to the list of token agents",
+        "params": {
+          "_agentAddress": "address of the agent to be added  Emits a TokenAgentAdded event"
+        }
+      },
+      "bindToken(address)": {
+        "details": "binds a token to the compliance contract",
+        "params": {
+          "_token": "address of the token to bind  Emits a TokenBound event"
+        }
+      },
+      "canTransfer(address,address,uint256)": {
+        "details": "checks that the transfer is compliant.  default compliance always returns true  READ ONLY FUNCTION, this function cannot be used to increment  counters, emit events, ...",
+        "params": {
+          "_amount": "The amount of tokens involved in the transfer",
+          "_from": "The address of the sender",
+          "_to": "The address of the receiver"
+        }
+      },
+      "created(address,uint256)": {
+        "details": "function called whenever tokens are created  on a wallet  this function can update state variables in the compliance contract  these state variables being used by `canTransfer` to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the compliance smart contract",
+        "params": {
+          "_amount": "The amount of tokens involved in the transfer",
+          "_to": "The address of the receiver"
+        }
+      },
+      "destroyed(address,uint256)": {
+        "details": "function called whenever tokens are destroyed  this function can update state variables in the compliance contract  these state variables being used by `canTransfer` to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the compliance smart contract",
+        "params": {
+          "_amount": "The amount of tokens involved in the transfer",
+          "_from": "The address of the receiver"
+        }
+      },
+      "isTokenAgent(address)": {
+        "details": "Returns true if the Address is in the list of token agents",
+        "params": {
+          "_agentAddress": "address of this agent"
+        }
+      },
+      "isTokenBound(address)": {
+        "details": "Returns true if the address given corresponds to a token that is bound with the Compliance contract",
+        "params": {
+          "_token": "address of the token"
+        }
+      },
+      "removeTokenAgent(address)": {
+        "details": "remove Agent from the list of token agents",
+        "params": {
+          "_agentAddress": "address of the agent to be removed (must be added first)  Emits a TokenAgentRemoved event"
+        }
+      },
+      "transferOwnershipOnComplianceContract(address)": {
+        "details": "function used to transfer the ownership of the compliance contract  to a new owner, giving him access to the `OnlyOwner` functions implemented on the contract",
+        "params": {
+          "newOwner": "The address of the new owner of the compliance contract  This function can only be called by the owner of the compliance contract  emits an `OwnershipTransferred` event"
+        }
+      },
+      "transferred(address,address,uint256)": {
+        "details": "function called whenever tokens are transferred  from one wallet to another  this function can update state variables in the compliance contract  these state variables being used by `canTransfer` to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the compliance smart contract",
+        "params": {
+          "_amount": "The amount of tokens involved in the transfer",
+          "_from": "The address of the sender",
+          "_to": "The address of the receiver"
+        }
+      },
+      "unbindToken(address)": {
+        "details": "unbinds a token from the compliance contract",
+        "params": {
+          "_token": "address of the token to unbind  Emits a TokenUnbound event"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "TokenAgentAdded(address)": {
+        "notice": "this event is emitted when the Agent has been added on the allowedList of this Compliance.  the event is emitted by the Compliance constructor and by the addTokenAgent function  `_agentAddress` is the address of the Agent to add"
+      },
+      "TokenAgentRemoved(address)": {
+        "notice": "this event is emitted when the Agent has been removed from the agent list of this Compliance.  the event is emitted by the Compliance constructor and by the removeTokenAgent function  `_agentAddress` is the address of the Agent to remove"
+      },
+      "TokenBound(address)": {
+        "notice": "this event is emitted when a token has been bound to the compliance contract  the event is emitted by the bindToken function  `_token` is the address of the token to bind"
+      },
+      "TokenUnbound(address)": {
+        "notice": "this event is emitted when a token has been unbound from the compliance contract  the event is emitted by the unbindToken function  `_token` is the address of the token to unbind"
+      }
+    },
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
